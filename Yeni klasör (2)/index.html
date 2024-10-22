@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azerbaycan Respublikası</title>
+    <style>
+        body {
+            background-color: #003C71; /* Başlangıç arka plan rengi */
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Yanıp sönen ışıklar için kaydırmayı önle */
+        }
+        .flashing {
+            animation: flash 1s infinite alternate;
+        }
+        @keyframes flash {
+            0% {
+                background-color: #003C71; /* Mavi arka plan */
+            }
+            50% {
+                background-color: #FF0000; /* Kırmızı arka plan */
+            }
+            100% {
+                background-color: #003C71; /* Mavi arka plan */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="azerbaijan-crest.png" alt="Azerbaycan Arması" 
+             style="width: 150px; height: auto; margin-top: 20px;" 
+             onclick="startSiren()">
+        <h1>Azerbaycan Respublikası</h1>
+        <h2>Gündüz Müellim</h2>
+        <audio id="audio" loop>
+            <source src="music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        function startSiren() {
+            document.getElementById('audio').play();
+            document.body.classList.add('flashing'); // Yanıp sönme sınıfını ekle
+        }
+    </script>
+</body>
+</html>
